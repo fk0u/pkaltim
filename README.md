@@ -63,7 +63,7 @@ Program Mini Web Project untuk meningkatkan keterampilan siswa XII PPLG 1 dalam 
 |:---:|---------|---------|:------:|-----------|--------|:---:|
 | **1** | Glenn, Bregas, Reza | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Navies** |
 | **2** | Chalel, Ikhsan, Ridho | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Widhi** |
-| **3** | Navies, Rio, Habibi | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Navies** |
+| **3** | Navies, Rio, Habibi | Wisata Kuliner | 🔄 Setup | - | - | **Navies** |
 | **4** | Ghani, Aldi, Dhika | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Ghani** |
 | **5** | Lawindra, Weka, Farhan | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Ghani** |
 | **6** | Tristan, Fauzan, Nizar | Belum memilih (pilih 1/5) | 🔄 Setup | - | - | **Navies** |
