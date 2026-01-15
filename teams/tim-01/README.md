@@ -1,6 +1,6 @@
 # 🏞️ Tim 1 - Wisata Alam
 
-**PIC:** Widhi  
+**PIC:** Navies  
 **Subtema:** Wisata Alam Kalimantan Timur
 
 ## 👥 Anggota Tim
@@ -20,10 +20,10 @@ Website informasi dan booking destinasi wisata alam di Kalimantan Timur, meliput
 - ✅ Admin panel dengan login
 
 ## 🛠️ Tech Stack
-- **Backend:** PHP Native
+- **Backend:** Laravel 11/12
 - **Database:** MySQL
 - **Frontend:** Bootstrap 5
-- **Local Server:** XAMPP
+- **Local Server:** XAMPP and Laragon
 - **Hosting:** 000webhost
 
 ## 📦 Installasi Lokal
