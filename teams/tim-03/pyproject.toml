@@ -1,0 +1,17 @@
+[project]
+name = "tim-03"
+version = "0.1.0"
+description = "Website Artikel Wisata Kuliner Kaltim"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.128.0",
+    "sqlalchemy>=2.0.0",
+    "pymysql>=1.1.0",
+    "python-multipart>=0.0.6",
+    "python-jose[cryptography]>=3.3.0",
+    "python-dotenv>=1.0.0",
+    "pillow>=10.0.0",
+    "bcrypt==4.3.0",
+    "passlib>=1.7.4",
+]
