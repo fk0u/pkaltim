@@ -1,7 +1,7 @@
 # Tim 11 - [Subtema]
 
-**PIC:** [PIC Name]  
-**Subtema:** [Detail Subtema]
+**PIC:** Widhi  
+**Subtema:** Kuliner Khas
 
 ## 👥 Anggota Tim
 1. [Nama 1] (Leader)
