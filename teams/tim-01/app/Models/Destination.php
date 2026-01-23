@@ -2,19 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Destination extends Model
 {
-    use HasFactory;
-
-    // Sesuai tabel 'destinations'
-    protected $fillable = [
-        'category_id', 'name', 'slug', 'description', 
-        'address', 'price', 'price_note', 
-        'latitude', 'longitude', 'opening_hours', 'status'
-    ];
+    protected $guarded = ['id'];
 
     // Relasi ke Kategori
     public function category()
@@ -22,27 +14,38 @@ class Destination extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // Relasi ke Images (One to Many)
+    // Relasi ke Gambar
     public function images()
     {
         return $this->hasMany(DestinationImage::class);
     }
 
-    // Relasi ke Reviews untuk menghitung Rating
+    // Helper untuk ambil gambar utama
+    public function getCoverImageAttribute()
+    {
+        $primary = $this->images->where('is_primary', true)->first();
+        if ($primary) return $primary->image_path;
+        
+        // Jika tidak ada primary, ambil gambar pertama
+        $first = $this->images->first();
+        return $first ? $first->image_path : 'default.jpg';
+    }
+
+    // Relasi ke Fasilitas (Many to Many)
+    public function facilities()
+    {
+        return $this->belongsToMany(Facility::class, 'destination_facilities');
+    }
+
+    // Relasi ke Review
     public function reviews()
     {
         return $this->hasMany(Review::class);
     }
-
-    // Accessor untuk mengambil gambar pertama (thumbnail)
-    public function getThumbnailAttribute()
+    
+    // Scope untuk menampilkan review yang sudah diapprove saja
+    public function approvedReviews()
     {
-        return $this->images->first()->image_path ?? 'default.jpg';
-    }
-
-    // Accessor untuk menghitung rata-rata rating
-    public function getRatingAvgAttribute()
-    {
-        return $this->reviews->avg('rating') ?? 0;
+        return $this->reviews()->where('status', 'approved');
     }
 }
