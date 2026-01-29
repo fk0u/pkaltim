@@ -6,28 +6,36 @@
         
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-icon">📝</div>
+            <div class="stat-icon">
+              <i class="fi fi-rr-document"></i>
+            </div>
             <div class="stat-content">
               <h3>{{ stats.totalArticles }}</h3>
               <p>Total Artikel</p>
             </div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">📂</div>
+            <div class="stat-icon">
+              <i class="fi fi-rr-folder"></i>
+            </div>
             <div class="stat-content">
               <h3>{{ stats.totalCategories }}</h3>
               <p>Kategori</p>
             </div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">👁️</div>
+            <div class="stat-icon">
+              <i class="fi fi-rr-eye"></i>
+            </div>
             <div class="stat-content">
               <h3>{{ stats.totalViews }}</h3>
               <p>Total Views</p>
             </div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">✅</div>
+            <div class="stat-icon">
+              <i class="fi fi-rr-check"></i>
+            </div>
             <div class="stat-content">
               <h3>{{ stats.publishedArticles }}</h3>
               <p>Artikel Published</p>

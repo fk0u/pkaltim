@@ -167,6 +167,7 @@ export default {
   line-height: 1.6;
   opacity: 0.95;
   margin-bottom: 2.5rem;
+  color: #fff;
 }
 
 .btn-cta {

@@ -15,6 +15,8 @@
               <span>{{ formatDate(article.created_at) }}</span>
               <span>•</span>
               <span>{{ article.views }} views</span>
+              <span>•</span>
+              <span>Author : NvsNox </span>
             </div>
           </div>
 

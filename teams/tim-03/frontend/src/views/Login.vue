@@ -4,7 +4,9 @@
     <div class="login-visual">
       <div class="visual-overlay"></div>
       <div class="visual-content">
-        <div class="logo-badge">🍜</div>
+        <div class="logo-badge">
+          <i class="fi fi-rr-restaurant"></i>
+        </div>
         <h1>PKaltim Kuliner</h1>
         <p>Jelajahi dan kelola ragam cita rasa khas Kalimantan Timur dalam satu panel admin yang terintegrasi.</p>
       </div>
