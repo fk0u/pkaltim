@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍲 Tim 06 - Wisata Kuliner Kaltim
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=flat-square&logo=bootstrap&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat-square&logo=mysql&logoColor=white)
 
-## About Laravel
+**PIC:** [Navies]  
+**Subtema:** Kuliner Khas Kalimantan Timur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👥 Anggota Tim
+1. **[Muhammad Fauzan]** 
+2. **[Nur Nizar Ahnaf]** 
+3. **[Tristan Richardo Pieterson Pondaag]** 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📝 Deskripsi Project
+Website ini adalah platform informasi digital yang menampilkan berbagai informasi kuliner khas Kalimantan Timur.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Website ini memisahkan hak akses antara **Pengunjung (Public)** untuk mencari informasi, dan **Admin** untuk mengelola data (CRUD).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Fitur Utama
 
-## Laravel Sponsors
+### 🌍 Halaman Publik (Pengunjung)
+* **Beranda (Home):** Tampilan visual menarik dengan rekomendasi kuliner terbaik.
+* **Katalog Kuliner:** Daftar makanan lengkap dengan fitur filter kategori.
+* **Pencarian:** Cari makanan berdasarkan nama.
+* **Detail Makanan:** Informasi lengkap tentang kuliner, harga, peta lokasi, review dan rating.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🔐 Halaman Admin
+* **Dashboard Admin:** Total Data-data kuliner, rumah makan, review, dan daerah. Statistik jumlah data kuliner dan top rumah makan.
+* **Kelola Data (CRUD):** Tambah, Edit, dan Hapus data kuliner serta rumah makan.
+* **Autentikasi:** Login aman khusus admin.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🎯 Target & Status Fitur
+Berikut adalah progress pengerjaan fitur aplikasi kami:
 
-## Contributing
+- [x] **Setup Project & Database** (Selesai)
+- [x] **Authentication** (Login Admin)
+- [x] **Database Relational** (Tabel User, Makanan, Rumah Makan, Menu, Review)
+- [x] **CRUD Data Kuliner dan Rumah Makan** (Create, Read, Update, Delete)
+- [x] **Halaman Public** (Daftar Makanan & Detail)
+- [x] **Fitur Pencarian & Filter**
+- [x] **Fitur Peta Lokasi**
+- [x] **Fitur Review & Rating**
+- [x] **Responsive UI** 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🛠️ Teknologi yang Digunakan
+* **Framework:** Laravel 12
+* **Bahasa:** PHP 8.2+
+* **Database:** MySQL
+* **Frontend:** Blade Templates + Bootstrap 5
+* **Server:** Apache (Laragon)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 📦 Cara Instalasi (How to Run)
+Jika ingin menjalankan project ini di komputer lokal, ikuti langkah berikut:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1.  **Masuk ke direktori:**
+    ```bash
+    cd pkaltim/teams/tim-06
+    ```
+2.  **Install Vendor:**
+    ```bash
+    composer install
+    ```
+3.  **Setup Environment:**
+    * Copy file `.env.example` menjadi `.env`.
+    * Atur database: `DB_DATABASE=db_kulinerkaltim`.
+4.  **Migrate Database:**
+    ```bash
+    php artisan key:generate
+    php artisan migrate:fresh --seed
+    ```
+5.  **Jalankan Server:**
+    ```bash
+    php artisan serve
+    ```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Live Demo
+**URL:** *[Coming Soon]*
+
+## 📅 Status Project
+✅ **Development Phase** (Fitur Utama Selesai, tahap Finalisasi)
+
+---
+**Last Update:** 1 Februari 2026
