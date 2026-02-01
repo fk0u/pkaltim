@@ -47,6 +47,7 @@ Berikut adalah progress pengerjaan fitur aplikasi kami:
 - [x] **CRUD Data Kuliner dan Rumah Makan** (Create, Read, Update, Delete)
 - [x] **Halaman Public** (Daftar Makanan & Detail)
 - [x] **Fitur Pencarian & Filter**
+- [x] **Fitur Statistik Menggunakan Chart.js**
 - [x] **Fitur Peta Lokasi**
 - [x] **Fitur Review & Rating**
 - [x] **Responsive UI** 
