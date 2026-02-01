@@ -1,20 +1,20 @@
 # 🍽️ Kulkaltim  
-**Direktori & Pariwisata Kuliner Kalimantan Timur**
+**Pariwisata Kuliner Kalimantan Timur**
 
 ## 📌 Informasi Tim
-**Tim 09 – Direktori & Pariwisata Kuliner**  
+**Tim 09 – Pariwisata Kuliner Kalimantan Timur**  
 **Subtema:** Kuliner Kalimantan Timur (Kulkaltim)  
 **PIC:** [Navies]
 
 ### 👥 Anggota Tim
 - **[Muhammad Rifqi Ramadhan]** (Leader) – Project Manager
 - **[Muhammad Zidan Pratama]** –  Backend
-- **[Rafik Anugrah Yana]** – Frontend UI/UX & Styling
+- **[Rafik Anugrah Yana]** – Frontend UI/UX
 
 ---
 
 ## 📝 Deskripsi Project
-**Kulkaltim** adalah platform direktori kuliner berbasis web yang dirancang untuk memperkenalkan kekayaan makanan dan minuman khas **Kalimantan Timur**.  
+**Kulkaltim** adalah platform direktori kuliner berbasis web yang dirancang untuk memperkenalkan kekayaan makanan khas **Kalimantan Timur**.  
 Aplikasi ini menjadi solusi bagi wisatawan maupun masyarakat lokal dalam mencari referensi tempat makan yang valid, terpusat, dan mudah diakses.
 
 Sistem dibangun menggunakan **Laravel 12.x** dan **MySQL**, dengan **Bootstrap 5** sebagai framework UI untuk menghasilkan tampilan yang responsif, dan modern.
@@ -79,4 +79,4 @@ Sistem dibangun menggunakan **Laravel 12.x** dan **MySQL**, dengan **Bootstrap 5
 ---
 
 ## 📄 Lisensi
-Project ini dibuat untuk keperluan edukasi dan pengembangan sistem informasi berbasis web.
+Project ini dibuat untuk keperluan sekolah dan pengembangan sistem informasi berbasis web.
