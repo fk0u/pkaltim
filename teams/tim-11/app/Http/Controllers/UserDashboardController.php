@@ -8,6 +8,7 @@ use App\Models\Rating;
 use App\Models\Review;
 use App\Models\ReviewLike;
 use App\Models\ActivityLog;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -77,7 +78,7 @@ class UserDashboardController extends Controller
 
         $kuliners = $query->latest()->get();
         $categories = Category::all();
-        
+
         // Get session favorites for highlighting
         $sessionFavorites = session()->get('favorites', []);
 
@@ -98,7 +99,7 @@ class UserDashboardController extends Controller
             // Fallback to session
             $favoriteIds = session()->get('favorites', []);
         }
-        
+
         if (empty($favoriteIds)) {
             $kuliners = collect([]);
         } else {
@@ -207,7 +208,7 @@ class UserDashboardController extends Controller
         ]);
 
         $anonId = $this->anonymousUserId();
-        
+
         // Store rating in database under anonymous user
         $kulinerId = $kuliner->getKey();
         $rating = Rating::updateOrCreate(
@@ -274,30 +275,30 @@ class UserDashboardController extends Controller
     public function guestToggleReviewLike(Review $review)
     {
         $sessionLikes = session()->get('review_likes', []);
-        
+
         $reviewId = $review->getKey();
         if (in_array($reviewId, $sessionLikes, true)) {
             // Unlike - remove from session
             $sessionLikes = array_values(array_filter($sessionLikes, fn($id) => $id !== $reviewId));
             session()->put('review_likes', $sessionLikes);
-            
+
             // Also remove from database if exists
             $anonId = $this->anonymousUserId();
             ReviewLike::where('user_id', $anonId)->where('review_id', $reviewId)->delete();
-            
+
             return response()->json(['status' => 'removed', 'likes_count' => $review->likes()->count()]);
         } else {
             // Like - add to session
             $sessionLikes[] = $reviewId;
             session()->put('review_likes', $sessionLikes);
-            
+
             // Also add to database
             $anonId = $this->anonymousUserId();
             ReviewLike::firstOrCreate([
                 'user_id' => $anonId,
                 'review_id' => $reviewId
             ]);
-            
+
             return response()->json(['status' => 'added', 'likes_count' => $review->likes()->count()]);
         }
     }

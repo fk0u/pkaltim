@@ -8,13 +8,6 @@
             <h2 class="text-2xl font-bold text-gray-800">Manage Kuliner</h2>
             <p class="text-gray-600">Daftar semua kuliner yang telah ditambahkan.</p>
         </div>
-        <a href="{{ route('kuliner.create') }}"
-            class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition shadow-md flex items-center">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-            Tambah Kuliner
-        </a>
     </div>
 
     <!-- Success Message -->
