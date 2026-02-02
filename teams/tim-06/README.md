@@ -93,7 +93,7 @@ Jika ingin menjalankan project ini di komputer lokal, ikuti langkah berikut:
 **URL:** *[Coming Soon]*
 
 ## 📅 Status Project
-✅ **Development Phase** (Fitur Utama Selesai, tahap Finalisasi)
+✅ **Development Phase** (Selesai)
 
 ---
 **Last Update:** 1 Februari 2026
