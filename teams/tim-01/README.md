@@ -1,32 +1,39 @@
-# 🏞️ Tim 1 - Wisata Alam
+# 🏞️ Tim 1 - Wisata Alam Kalimantan Timur (WisataKaltim)
 
-**PIC:** Widhi  
-**Subtema:** Wisata Alam Kalimantan Timur
+**PIC:** Navies
+**Subtema:** Wisata Alam Kalimantan Timur (WisataKaltim)
 
 ## 👥 Anggota Tim
-1. Glenn (Leader)
-2. Bregas
-3. Reza
+1. Glenn (Leader, Frontend & backend, Analyst)
+2. Bregas (Frontend & backend)
+3. Reza (UI/UX)
 
 ## 📝 Deskripsi Project
-Website informasi dan booking destinasi wisata alam di Kalimantan Timur, meliputi pantai, gunung, air terjun, dan taman nasional.
+Website promosi dan informasi destinasi wisata alam unggulan di Kalimantan Timur. Website ini memudahkan wisatawan untuk mencari lokasi wisata, melihat fasilitas, galeri foto, serta memberikan ulasan pengalaman mereka.
 
-## 🎯 Target Fitur
-- ✅ CRUD destinasi wisata alam
-- ✅ Peta interaktif (Google Maps)
-- ✅ Galeri foto destinasi
-- ✅ Form booking tour guide
-- ✅ Rating & review destinasi
-- ✅ Admin panel dengan login
+![Tampilan Landing Page](teams/tim-01/screenshots/landingpage.png)
+
+## 🎯 Fitur Utama
+- ✅ **Landing Page Modern:** Desain responsif, hero section menarik, dan kartu destinasi premium.
+- ✅ **Pencarian & Filter:** Filter berdasarkan kategori, rentang harga, dan pencarian nama wisata.
+- ✅ **Detail Destinasi:** Informasi lengkap, peta lokasi (Google Maps), harga, jam buka, dan fasilitas.
+- ✅ **Galeri Foto:** Slider foto interaktif untuk setiap destinasi.
+- ✅ **Rating & Ulasan:** Pengunjung dapat memberikan rating dan komentar (dimoderasi admin).
+- ✅ **Admin Dashboard:**
+    - Login Admin Aman
+    - Manajemen CRUD Destinasi
+    - Manajemen Kategori
+    - Moderasi Ulasan Pengunjung
+    - Upload & Manajemen Foto
 
 ## 🛠️ Tech Stack
-- **Backend:** PHP Native
+- **Framework:** Laravel 12
+- **Language:** PHP 8.2
+- **Frontend:** Blade Templates, Tailwind CSS 4, Alpine.js
 - **Database:** MySQL
-- **Frontend:** Bootstrap 5
-- **Local Server:** XAMPP
-- **Hosting:** 000webhost
+- **Assets:** Vite
 
-## 📦 Installasi Lokal
+## 📦 Installasi & Konfigurasi
 
 ### 1. Clone Repository
 ```bash
@@ -34,52 +41,71 @@ git clone [URL_REPO_TIM_1]
 cd tim-1-wisata-alam
 ```
 
-### 2. Setup Database
-```sql
--- Buka phpMyAdmin: http://localhost/phpmyadmin
--- Create database
-CREATE DATABASE pkaltim_tim1;
-
--- Import SQL
--- Import file: database/pkaltim_tim1.sql
+### 2. Install Dependencies
+Pastikan Composer dan Node.js sudah terinstall.
+```bash
+composer install
+npm install
 ```
 
-### 3. Konfigurasi
-Edit `config.php`:
-```php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pkaltim_tim1";
+### 3. Konfigurasi Environment
+Salin file `.env.example` ke `.env` dan sesuaikan konfigurasi database.
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+Edit `.env`:
+```ini
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pkaltim_tim1
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
-### 4. Jalankan
+### 4. Setup Database
+Jalankan migrasi untuk membuat tabel:
+```bash
+php artisan migrate
 ```
-http://localhost/tim-1-wisata-alam/
+*(Opsional)* Jalankan seeder jika tersedia untuk data dummy:
+```bash
+php artisan db:seed
 ```
 
-### Login Admin
+### 5. Jalankan Aplikasi
+Buka dua terminal terpisah:
+
+**Terminal 1 (Backend Server):**
+```bash
+php artisan serve
+```
+
+**Terminal 2 (Frontend Build/Watch):**
+```bash
+npm run dev
+```
+
+Akses website di: `http://localhost:8000`
+
+### 🔐 Akun Admin Default
+(Jika menggunakan seeder default)
 - **Username:** admin
-- **Password:** admin123
+- **Password:** password
 
-## 🚀 Live Demo
-**URL:** [Coming Soon]
+## � Roadmap & Progress
+- [x] Perancangan Database & Migrations
+- [x] Setup Laravel & Tailwind CSS
+- [x] CRUD Data Master (Kategori, Destinasi, Fasilitas)
+- [x] Implementasi Halaman Publik (Landing, Detail)
+- [x] Fitur Filter & Pencarian
+- [x] Sistem Review & Rating
+- [x] Galeri Foto Dinamis
+- [ ] Finalisasi Deployment
 
-## 📸 Screenshot
-![Homepage](screenshot.png)
-
-## 📅 Progress
-- [x] Database design (12 Jan)
-- [x] CRUD local (20 Jan)
-- [ ] UI finalization (28 Jan)
-- [ ] Deploy hosting (2 Feb)
-
-## 📞 Kontak
-- Glenn: [WA/Email]
-- Bregas: [WA/Email]
-- Reza: [WA/Email]
+## Bugs & Fix
+- [ ] Penggunaan Memory meningkat setiap halaman di-refresh
 
 ---
-
-**Status:** 🚧 In Progress  
-**Last Update:** 9 Januari 2026
+**Tim 1 - Wisata Alam Kaltim** © 2026
