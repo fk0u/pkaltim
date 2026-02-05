@@ -170,14 +170,14 @@
                                 @if ($kuliner->google_maps_url)
                                     <a href="{{ $kuliner->google_maps_url }}" target="_blank"
                                         class="flex-1 px-3 py-2 bg-blue-500 text-white text-xs rounded-lg hover:bg-blue-600 transition flex items-center justify-center"
-                                        title="Lihat di Maps">
+                                        title="Lokasi Terpopuler">
                                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 7m0 13V7">
                                             </path>
                                         </svg>
-                                        Maps
+                                        Lokasi Terpopuler
                                     </a>
                                 @endif
                                 <a href="{{ route('kuliner.edit', $kuliner->id) }}"

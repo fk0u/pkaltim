@@ -11,37 +11,37 @@
         body { font-family: 'Poppins', sans-serif; }
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
-        
+
         /* Glassmorphism */
         .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .glass-dark { background: rgba(0,0,0,0.3); backdrop-filter: blur(12px); }
-        
+
         /* Gradient Backgrounds */
         .gradient-hero { background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffb347 100%); }
         .gradient-card { background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%); }
-        
+
         /* Animations */
         @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 20px rgba(255,107,53,0.4); } 50% { box-shadow: 0 0 40px rgba(255,107,53,0.6); } }
-        
+
         .float-1 { animation: float 6s ease-in-out infinite; }
         .float-2 { animation: float 8s ease-in-out infinite 1s; }
         .float-3 { animation: float 7s ease-in-out infinite 2s; }
         .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
         .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-        
+
         /* Card Hover */
         .card-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
         .card-hover:hover .card-img { transform: scale(1.1); }
         .card-img { transition: transform 0.5s ease; }
-        
+
         /* Button Effects */
         .btn-shine { position: relative; overflow: hidden; }
         .btn-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(transparent, rgba(255,255,255,0.3), transparent); transform: rotate(45deg) translateX(-100%); transition: 0.6s; }
         .btn-shine:hover::after { transform: rotate(45deg) translateX(100%); }
-        
+
         /* Input Focus */
         .input-glow:focus { box-shadow: 0 0 0 3px rgba(249,115,22,0.3); }
     </style>
@@ -90,7 +90,7 @@
             <div class="absolute top-1/2 right-1/3 w-20 h-20 bg-white/20 rounded-full float-1"></div>
             <div class="absolute bottom-10 right-10 w-28 h-28 bg-white/10 rounded-full float-2"></div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div class="text-center fade-in-up">
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-lg">
@@ -100,7 +100,7 @@
                 <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
                     Temukan kelezatan kuliner tradisional bersama <span class="font-bold">Sireta</span>. Rasa Nusantara dari Timur.
                 </p>
-                
+
                 <!-- Search Box in Hero -->
                 <div class="glass rounded-2xl p-6 max-w-4xl mx-auto shadow-2xl">
                     <form action="{{ route('landing') }}" method="GET" class="flex flex-col md:flex-row gap-4">
@@ -135,7 +135,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Wave Separator -->
         <div class="absolute bottom-0 left-0 right-0">
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(255 247 237)"/></svg>
@@ -171,7 +171,7 @@
                             @endphp
                             <img src="{{ $imgSrc }}" alt="{{ $kuliner->nama_kuliner }}" class="w-full h-full object-cover card-img" onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360?text=No+Image';">
                             <div class="absolute inset-0 gradient-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
+
                             <!-- Badges -->
                             <div class="absolute top-3 right-3 flex flex-col gap-2">
                                 @if ($kuliner->is_halal)
@@ -224,7 +224,7 @@
                                 @if ($kuliner->google_maps_url)
                                     <a href="{{ $kuliner->google_maps_url }}" target="_blank" onclick="event.stopPropagation()" class="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md hover:shadow-lg">
                                         <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-                                        Maps
+                                        Lokasi Terpopuler
                                     </a>
                                 @endif
                             </div>
@@ -263,7 +263,7 @@
                     <div id="modalBadges" class="flex flex-wrap gap-2 mb-6"></div>
                     <p id="modalDesc" class="text-gray-600 leading-relaxed mb-8 text-lg"></p>
                     <div id="modalPlace" class="bg-gray-50 rounded-xl p-4 mb-6 hidden"><h4 class="font-semibold text-gray-900 flex items-center"><svg class="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg><span id="modalPlaceName"></span></h4></div>
-                    
+
                     <!-- Rating Section -->
                     <div class="border-t border-gray-100 pt-6 mb-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-4">Berikan Rating</h3>
@@ -276,7 +276,7 @@
                             <span id="userRatingText" class="text-sm text-gray-500 ml-3"></span>
                         </div>
                     </div>
-                    
+
                     <!-- Reviews Section -->
                     <div class="border-t border-gray-100 pt-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-4">Ulasan (<span id="reviewCount">0</span>)</h3>

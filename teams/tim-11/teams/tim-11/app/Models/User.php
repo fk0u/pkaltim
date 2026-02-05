@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-<<<<<<< HEAD
-=======
 /**
  * @property int $id
  * @property string $name
@@ -19,7 +17,6 @@ use Illuminate\Notifications\Notifiable;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @mixin \Eloquent
  */
->>>>>>> master
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -34,11 +31,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-<<<<<<< HEAD
-=======
         'role',
         'status',
->>>>>>> master
     ];
 
     /**
