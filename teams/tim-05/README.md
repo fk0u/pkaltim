@@ -1,12 +1,12 @@
 # 🐬 Tim 5 - PesutTrip (Wisata Kalimantan Timur)
 
-**PIC:** Farhan
+**PIC:** Ghani
 **Subtema:** Wisata & Budaya Kalimantan Timur
 
 ## 👥 Anggota Tim
 1. Farhan (Leader & Fullstack Developer)
-2. [Nama Anggota 2] (Role)
-3. [Nama Anggota 3] (Role)
+2. Weka (UI/UX Developer)
+3. Lawindra (Backend Developer)
 
 ## 📝 Deskripsi Project
 **PesutTrip** adalah platform pariwisata digital yang didedikasikan untuk memperkenalkan keindahan alam dan kekayaan budaya Kalimantan Timur. Website ini dirancang untuk memberikan pengalaman eksplorasi yang imersif melalui visual berkualitas tinggi dan informasi yang komprehensif.
