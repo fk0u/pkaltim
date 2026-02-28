@@ -111,15 +111,13 @@
                         <!-- Badges -->
                         <div class="absolute top-2 right-2 flex flex-col space-y-1 items-end">
                             @if ($kuliner->is_halal)
-                                <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full shadow-sm">Halal</span>
+                                <span class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs px-2.5 py-1 rounded-full shadow-sm font-medium">Halal</span>
                             @else
-                                <span
-                                    class="bg-red-500 text-white text-xs px-2 py-1 rounded-full shadow-sm">Non-Halal</span>
+                                <span class="bg-gradient-to-r from-rose-500 to-red-600 text-white text-xs px-2.5 py-1 rounded-full shadow-sm font-medium">Non-Halal</span>
                             @endif
 
                             @if ($kuliner->is_vegetarian)
-                                <span
-                                    class="bg-green-600 text-white text-xs px-2 py-1 rounded-full shadow-sm">Veggie</span>
+                                <span class="bg-gradient-to-r from-lime-500 to-green-600 text-white text-xs px-2.5 py-1 rounded-full shadow-sm font-medium">Veggie</span>
                             @endif
                         </div>
                     </div>
@@ -147,8 +145,7 @@
 
                             <div class="flex flex-wrap gap-1 mb-3">
                                 @foreach ($kuliner->categories as $cat)
-                                    <span
-                                        class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{{ $cat->nama_kategori }}</span>
+                                    <span class="bg-orange-50 text-orange-700 border border-orange-100 text-xs px-2.5 py-1 rounded-full font-medium">{{ $cat->nama_kategori }}</span>
                                 @endforeach
                             </div>
                         </div>
@@ -306,20 +303,17 @@
                         onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360?text=No+Image';">`;
 
                     let categoriesHtml = data.categories.map(cat =>
-                        `<span class="bg-orange-100 text-orange-600 text-sm px-3 py-1 rounded-full">${cat.nama_kategori}</span>`
+                        `<span class="bg-orange-50 text-orange-700 border border-orange-100 text-sm px-3 py-1 rounded-full font-medium">${cat.nama_kategori}</span>`
                     ).join('');
 
                     let badgesHtml = '';
                     if (data.is_halal) {
-                        badgesHtml +=
-                            '<span class="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Halal</span>';
+                        badgesHtml += '<span class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm px-3 py-1 rounded-full font-medium shadow-sm">Halal</span>';
                     } else {
-                        badgesHtml +=
-                            '<span class="bg-red-500 text-white text-sm px-3 py-1 rounded-full">Non-Halal</span>';
+                        badgesHtml += '<span class="bg-gradient-to-r from-rose-500 to-red-600 text-white text-sm px-3 py-1 rounded-full font-medium shadow-sm">Non-Halal</span>';
                     }
                     if (data.is_vegetarian) {
-                        badgesHtml +=
-                            '<span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full ml-2">Vegetarian</span>';
+                        badgesHtml += '<span class="bg-gradient-to-r from-lime-500 to-green-600 text-white text-sm px-3 py-1 rounded-full font-medium shadow-sm ml-2">Vegetarian</span>';
                     }
 
                     const content = `

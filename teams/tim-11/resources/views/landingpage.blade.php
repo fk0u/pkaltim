@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Jelajahi Kuliner - Sireta</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; }
@@ -175,12 +176,12 @@
                             <!-- Badges -->
                             <div class="absolute top-3 right-3 flex flex-col gap-2">
                                 @if ($kuliner->is_halal)
-                                    <span class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">✓ Halal</span>
+                                    <span class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">✓ Halal</span>
                                 @else
-                                    <span class="bg-gradient-to-r from-red-500 to-rose-500 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">Non-Halal</span>
+                                    <span class="bg-gradient-to-r from-rose-500 to-red-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">Non-Halal</span>
                                 @endif
                                 @if ($kuliner->is_vegetarian)
-                                    <span class="bg-gradient-to-r from-green-400 to-teal-400 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">🌿 Vegetarian</span>
+                                    <span class="bg-gradient-to-r from-lime-500 to-green-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg">🌿 Vegetarian</span>
                                 @endif
                             </div>
 
@@ -209,7 +210,7 @@
                             <!-- Categories -->
                             <div class="flex flex-wrap gap-2 mb-4">
                                 @foreach ($kuliner->categories as $cat)
-                                    <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full font-medium">{{ $cat->nama_kategori }}</span>
+                                    <span class="bg-gradient-to-r from-orange-400 to-amber-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm">{{ $cat->nama_kategori }}</span>
                                 @endforeach
                             </div>
 
@@ -385,9 +386,9 @@
             if (k.google_maps_url) { mapsBtn.href = k.google_maps_url; mapsBtn.classList.remove('hidden'); } else { mapsBtn.classList.add('hidden'); }
             const placeDiv = document.getElementById('modalPlace');
             if (k.place) { document.getElementById('modalPlaceName').textContent = k.place.nama_tempat; placeDiv.classList.remove('hidden'); } else { placeDiv.classList.add('hidden'); }
-            let badgesHtml = k.is_halal ? '<span class="bg-green-100 text-green-700 text-sm px-4 py-1.5 rounded-full font-semibold">✓ Halal</span>' : '<span class="bg-red-100 text-red-700 text-sm px-4 py-1.5 rounded-full font-semibold">Non-Halal</span>';
-            if (k.is_vegetarian) badgesHtml += '<span class="bg-green-100 text-green-700 text-sm px-4 py-1.5 rounded-full font-semibold">🌿 Vegetarian</span>';
-            k.categories.forEach(cat => { badgesHtml += `<span class="bg-orange-100 text-orange-700 text-sm px-4 py-1.5 rounded-full font-semibold">${cat.nama_kategori}</span>`; });
+            let badgesHtml = k.is_halal ? '<span class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm px-4 py-1.5 rounded-full font-semibold shadow-md">✓ Halal</span>' : '<span class="bg-gradient-to-r from-rose-500 to-red-600 text-white text-sm px-4 py-1.5 rounded-full font-semibold shadow-md">Non-Halal</span>';
+            if (k.is_vegetarian) badgesHtml += '<span class="bg-gradient-to-r from-lime-500 to-green-600 text-white text-sm px-4 py-1.5 rounded-full font-semibold shadow-md ml-2">🌿 Vegetarian</span>';
+            k.categories.forEach(cat => { badgesHtml += `<span class="bg-gradient-to-r from-orange-400 to-amber-500 text-white text-sm px-4 py-1.5 rounded-full font-semibold shadow-md ml-1">${cat.nama_kategori}</span>`; });
             document.getElementById('modalBadges').innerHTML = badgesHtml;
             updateFavoriteBtn(getFavorites().includes(currentKulinerId));
             updateStarDisplay(data.user_rating);
@@ -472,7 +473,42 @@
             const form = e.target;
             const data = Object.fromEntries(new FormData(form).entries());
             fetch('/guest/feedback', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrfToken }, body: JSON.stringify(data) })
-            .then(res => res.json()).then(data => { if(data.status === 'success') { alert('Terima kasih! Masukan Anda telah terkirim.'); form.reset(); closeFeedbackModal(); } }).catch(err => { console.error(err); alert('Gagal mengirim masukan.'); });
+            .then(res => res.json()).then(data => { 
+                if(data.status === 'success') { 
+                    Swal.fire({
+                        title: 'Terima kasih!',
+                        text: 'Masukan Anda telah terkirim.',
+                        icon: 'success',
+                        confirmButtonText: 'Tutup',
+                        customClass: {
+                            popup: 'rounded-2xl p-6',
+                            title: 'text-gray-800 text-xl font-bold font-sans',
+                            htmlContainer: 'text-gray-600 text-sm',
+                            confirmButton: 'bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:-translate-y-0.5',
+                            actions: 'mt-6'
+                        },
+                        buttonsStyling: false
+                    });
+                    form.reset(); 
+                    closeFeedbackModal(); 
+                } 
+            }).catch(err => { 
+                console.error(err); 
+                Swal.fire({
+                    title: 'Gagal!',
+                    text: 'Terjadi kesalahan saat mengirim masukan.',
+                    icon: 'error',
+                    confirmButtonText: 'Coba Lagi',
+                    customClass: {
+                        popup: 'rounded-2xl p-6',
+                        title: 'text-gray-800 text-xl font-bold font-sans',
+                        htmlContainer: 'text-gray-600 text-sm',
+                        confirmButton: 'bg-red-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-0.5',
+                        actions: 'mt-6'
+                    },
+                    buttonsStyling: false
+                }); 
+            });
         }
 
         document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { closeDetailModal(); closeFeedbackModal(); } });
