@@ -264,7 +264,6 @@ User umum **tidak memerlukan login** untuk:
 - Menulis komentar
 - Like komentar
 
-
 ---
 
 ## 📁 Struktur Database
